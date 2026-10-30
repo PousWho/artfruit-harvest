@@ -1,0 +1,28 @@
+.glass-select{display:inline-flex;position:relative;min-width:0;max-width:100%;vertical-align:middle}
+.glass-select[hidden]{display:none}
+.glass-select-native{display:none!important}
+.glass-select-trigger{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:46px;min-width:160px;width:100%;max-width:100%;padding:11px 17px;border:1px solid rgba(93,126,107,.24);border-top-color:rgba(255,255,255,.92);border-radius:13px 13px 23px 23px;background:rgba(255,255,250,.4);color:var(--ink,#174d40);box-shadow:0 4px 13px rgba(34,68,47,.06),inset 0 1px 0 rgba(255,255,255,.8);backdrop-filter:blur(18px) saturate(1.1);-webkit-backdrop-filter:blur(18px) saturate(1.1);font:500 16px/1.45 "Segoe UI",Arial,sans-serif;text-align:left;cursor:pointer;white-space:normal;transition:background .18s,border-color .18s,box-shadow .18s}
+.glass-select-trigger:hover{background:rgba(255,255,252,.58);border-color:rgba(83,124,101,.4)}
+.glass-select-trigger:focus-visible{outline:3px solid #b2c85c;outline-offset:3px}
+.glass-select-trigger:disabled{opacity:.52;cursor:not-allowed}
+.glass-select-value{min-width:0;overflow-wrap:anywhere}
+.glass-select-arrow{display:block;flex:none;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .18s}
+.glass-select-open .glass-select-trigger{background:rgba(255,255,252,.58);border-color:rgba(69,117,90,.5);box-shadow:0 5px 18px rgba(23,70,44,.08)}
+.glass-select-open .glass-select-arrow{transform:rotate(180deg)}
+.glass-select-menu{position:fixed;z-index:180;overflow-y:auto;overscroll-behavior:contain;padding:9px 8px 16px;border:1px solid rgba(255,255,255,.82);border-bottom-color:rgba(129,151,131,.38);border-radius:14px 14px 30px 30px;background:rgba(248,250,241,.64);color:#163f33;box-shadow:0 18px 48px rgba(10,51,34,.2),inset 0 1px 0 rgba(255,255,255,.96),inset 0 0 22px rgba(255,255,255,.18);backdrop-filter:blur(22px) saturate(1.15);-webkit-backdrop-filter:blur(22px) saturate(1.15);scrollbar-width:thin;scrollbar-color:rgba(75,113,83,.38) transparent;font:400 16px/1.5 "Segoe UI",Arial,sans-serif;animation:glass-select-in .16s ease-out}
+.glass-select-option{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;padding:10px 14px;margin:2px 0;border-radius:9px;color:inherit;cursor:pointer;overflow-wrap:anywhere;user-select:none;font-size:16px}
+.glass-select-option[aria-selected=true]{font-weight:600;background:rgba(222,233,197,.48)}
+.glass-select-option.is-active:not([aria-disabled=true]){background:rgba(205,225,190,.58);color:#154936}
+.glass-select-option[aria-disabled=true]{opacity:.48;cursor:not-allowed}
+.glass-select-check{width:18px;flex:none;font-size:16px}
+.glass-select-group,.glass-select-empty{padding:9px 14px;color:#5e755f;font-size:15px;line-height:1.5}
+.glass-select-group{font-weight:600}
+.field .glass-select,.mapping .glass-select{width:100%}
+.field .glass-select-trigger,.mapping .glass-select-trigger{min-width:0}
+.filterbar .glass-select-trigger{min-width:160px;background:rgba(255,255,251,.4)}
+.registry-tools .glass-select-trigger{min-width:175px}
+@keyframes glass-select-in{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@supports not (backdrop-filter:blur(1px)){.glass-select-menu{background:#f4f7ed}.glass-select-trigger{background:#f9fbf4}}
+@media(max-width:600px){.glass-select-trigger,.glass-select-option{font-size:16px;min-height:46px}.filterbar .glass-select{width:100%}.filterbar .glass-select-trigger{min-width:0}.registry-tools .glass-select{flex:1 1 150px}.registry-tools .glass-select-trigger{min-width:0}.glass-select-menu{border-radius:13px 13px 28px 28px}}
+@media(prefers-reduced-motion:reduce){.glass-select-menu{animation:none}.glass-select-trigger,.glass-select-arrow{transition:none}}
+@media print{.glass-select-trigger{border:0;background:transparent;box-shadow:none;padding:0;min-height:0}.glass-select-arrow,.glass-select-menu{display:none!important}}
